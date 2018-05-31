@@ -1,5 +1,7 @@
 from flask import Flask
 from flask import render_template
+from flask import url_for
+from flask import redirect
 app = Flask(__name__)
 
 
@@ -10,7 +12,7 @@ def index():
 
 @app.route("/save", methods=['POST'])
 def save():
-    return "Saved"
+    return redirect(url_for('index'))
 
 
 if __name__ == '__main__':
